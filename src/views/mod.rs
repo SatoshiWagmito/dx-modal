@@ -12,3 +12,6 @@ pub use view_form::*;
 
 mod view_404;
 pub use view_404::*;
+
+mod view_confirm;
+pub use view_confirm::*;

@@ -18,6 +18,9 @@ enum Route {
             #[layout(LayoutModal)]
                 #[route("/form")]
                 ViewForm {},
+
+                #[route("/confirm")]
+                ViewConfirm {},
             #[end_layout]
         #[end_nest]
     #[end_layout]
