@@ -4,6 +4,8 @@
 
 https://github.com/SatoshiWagmito/dx-modal/assets/120670559/76ea1722-52bf-4570-b9ad-39e8f7d66ee4
 
+https://github.com/SatoshiWagmito/dx-modal/assets/120670559/3100a05c-ea14-4f5c-bd08-9014f736fa6c
+
 
 ### Notes
 
