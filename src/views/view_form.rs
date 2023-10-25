@@ -1,6 +1,7 @@
 use dioxus::prelude::*;
+use crate::log;
 
-
+#[inline_props]
 pub fn ViewForm(cx: Scope) -> Element {
     render!(
         div {
@@ -10,11 +11,19 @@ pub fn ViewForm(cx: Scope) -> Element {
                 "Sign in to our platform"
             }
             form {
+                onsubmit: move |event| {
+                    log(format!("Submitted! {:?}", event).as_str());
+                    let email = event.data.values.get("email").unwrap().join("");
+                    let password = event.data.values.get("password").unwrap().join("");
+                    log(format!("{},{}", email, password).as_str());
+                    todo!();
+                },
                 class: "space-y-6",
                 action: "#",div {
                     label {
                         class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white",
-                        r#for: "email","Your email"
+                        r#for: "email",
+                        "Your email"
                     }
                     input {
                         class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white",
@@ -28,7 +37,8 @@ pub fn ViewForm(cx: Scope) -> Element {
                 div {
                     label {
                         class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white",
-                        r#for: "password","Your password"
+                        r#for: "password",
+                        "Your password"
                     }
                     input {
                         class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white",
@@ -71,6 +81,9 @@ pub fn ViewForm(cx: Scope) -> Element {
                     class: "text-sm font-medium text-gray-500 dark:text-gray-300",
                     "Not registered?"
                     a {
+                        onclick: move |event| {
+                            todo!();
+                        },
                         class: "text-blue-700 hover:underline dark:text-blue-500",
                         href: "#","Create account"
                     }

@@ -29,21 +29,21 @@ pub fn ViewConfirm(cx: Scope) -> Element {
             form {
                 onsubmit: move |event| {
                     // doesn't work rn
-                    //let uuid = event.data.values.get("uuid").unwrap().join("");
-                    //log::info!("Submitted! {:?}", uui);
+                    let uuid = event.data.values.get("uuid").unwrap().join("");
+                    log::info!("Submitted! {:?}", event);
                     todo!();
                 },
 
                 input {
                     id: "uuid",
-                    id: "name",
-                    r#type: "hidden",
+                    name: "uuid",
+                    //r#type: "hidden",
                     value: "a6ccd486-e03d-4beb-95c2-96f3741b0b93",
                 },
 
                 button {
-                    class: "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800",
                     r#type: "submit",
+                    class: "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800",
                     "I accept"
                 }
             }
